@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER David Personette <dperson@dperson.com>
+MAINTAINER Marcelo Bartsch <spam-mb+github@bartsch.cl>
 
 # Install samba
 RUN export DEBIAN_FRONTEND='noninteractive' && \
