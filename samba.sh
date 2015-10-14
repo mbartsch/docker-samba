@@ -128,6 +128,9 @@ shift $(( OPTIND - 1 ))
 
 if [ ! -e /var/run/dbus ] ; then
         mkdir /var/run/dbus
+else
+        rm -f /var/run/dbus/pid
+        rm -f /var/run/dbus/system_bus_socket
 fi
 if [ -x /usr/bin/dbus-daemon ] ; then
         /usr/bin/dbus-daemon --system
