@@ -4,7 +4,7 @@ MAINTAINER David Personette <dperson@dperson.com>
 # Install samba
 RUN export DEBIAN_FRONTEND='noninteractive' && \
     apt-get update -qq && \
-    apt-get install -qqy --no-install-recommends samba \
+    apt-get install -qqy --no-install-recommends samba avahi-daemon dbus \
                 $(apt-get -s dist-upgrade|awk '/^Inst.*ecurity/ {print $2}') &&\
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* && \
