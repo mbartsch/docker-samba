@@ -126,6 +126,16 @@ shift $(( OPTIND - 1 ))
 
 [[ "${TZ:-""}" ]] && timezone "$TZ"
 
+if [ ! -e /var/run/dbus ] ; then
+        mkdir /var/run/dbus
+fi
+if [ -x /usr/bin/dbus-daemon ] ; then
+        /usr/bin/dbus-daemon --system
+fi
+if [ -x /usr/sbin/avahi-daemon ]  ; then
+        /usr/sbin/avahi-daemon -D --no-chroot
+fi
+
 if [[ $# -ge 1 && -x $(which $1 2>&-) ]]; then
     exec "$@"
 elif [[ $# -ge 1 ]]; then
