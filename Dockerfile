@@ -20,7 +20,7 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     echo '   force group = users' >> /etc/samba/smb.conf && \
     echo '' >> /etc/samba/smb.conf
 COPY samba.sh /usr/bin/
-COPY smbd.service /etc/avahi/services
+COPY smbd.service /etc/avahi/services/
 
 VOLUME ["/run", "/tmp", "/var/cache", "/var/lib", "/var/log", "/var/tmp", \
             "/etc/samba"]
