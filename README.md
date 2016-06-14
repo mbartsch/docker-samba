@@ -2,7 +2,7 @@
 
 # Samba
 
-Samba docker container
+Samba docker container based on Alpine Linux v3.4
 
 # What is Samba?
 
