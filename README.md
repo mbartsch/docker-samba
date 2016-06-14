@@ -47,6 +47,7 @@ OR set local storage:
                     required arg: "<username>;<passwd>"
                     <username> for user
                     <password> for user
+        -z          enable AVAHI
 
     The 'command' (if provided and valid) will be run instead of samba
 
