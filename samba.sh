@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 #===============================================================================
 #          FILE: samba.sh
 #
@@ -149,7 +150,7 @@ while getopts ":hi:ns:t:u:w:z" opt; do
         n) NMBD="true" ;;
         s) eval share $(sed 's/#/ /g; s/;/ /g' <<< $OPTARG) ;;
         t) timezone "$OPTARG" ;;
-        u) eval user $(sed 's|;| |g' <<< $OPTARG) ;;
+        u) eval user $(sed 's|;| |g; s/#/ /g' <<< $OPTARG) ;;
         w) workgroup "$OPTARG" ;;
         z) avahi ;;
         "?") echo "Unknown option: -$OPTARG"; usage 1 ;;

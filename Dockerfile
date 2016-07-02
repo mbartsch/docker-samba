@@ -5,10 +5,9 @@ FROM alpine:latest
 MAINTAINER Marcelo Bartsch <spam-mb+github@bartsch.cl>
 
 RUN apk update && apk add samba samba-common-tools dbus avahi bash && rm -f /var/cache/apk/* && sed -i 's#/bin/ash#/bin/bash#'  /etc/passwd && adduser -S -D smbuser 
+COPY smbd.service /etc/avahi/services/
 COPY smb.conf /etc/samba/smb.conf
 COPY samba.sh /samba.sh
-COPY smbd.service /etc/avahi/services/
-
 RUN chmod +x /samba.sh
 ENTRYPOINT [ "/samba.sh" ]
 EXPOSE "137/tcp" "137/udp" "139/tcp" "445/tcp" 

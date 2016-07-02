@@ -32,8 +32,8 @@ OR set local storage:
         -h          This help
         -i "<path>" Import smbpassword
                     required arg: "<path>" - full file path in container to import
-        -s "<name;/path>[;browse;readonly;guest;users]" Configure a share
-                    required arg: "<name>;<comment>;</path>"
+        -s <name#/path>[#browse#readonly#guest#users] Configure a share
+                    required arg: "<name>#<comment>#</path>"
                     <name> is how it's called for clients
                     <path> path to share
                     NOTE: for the default values, just leave blank
@@ -43,8 +43,8 @@ OR set local storage:
                     [users] allowed default:'all' or list of allowed users
         -t ""       Configure timezone
                     possible arg: "[timezone]" - zoneinfo timezone for container
-        -u "<username;password>"       Add a user
-                    required arg: "<username>;<passwd>"
+        -u <username#password>       Add a user
+                    required arg: "<username>#<passwd>"
                     <username> for user
                     <password> for user
         -z          enable AVAHI
