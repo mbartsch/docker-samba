@@ -147,7 +147,7 @@ while getopts ":hi:ns:t:u:w:z" opt; do
         h) usage ;;
         i) import "$OPTARG" ;;
         n) NMBD="true" ;;
-        s) eval share $(sed 's/^\|$/"/g; s/;/ /g' <<< $OPTARG) ;;
+        s) eval share $(sed 's/#/ /g; s/;/ /g' <<< $OPTARG) ;;
         t) timezone "$OPTARG" ;;
         u) eval user $(sed 's|;| |g' <<< $OPTARG) ;;
         w) workgroup "$OPTARG" ;;
