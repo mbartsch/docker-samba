@@ -11,3 +11,4 @@ COPY samba.sh /samba.sh
 RUN chmod +x /samba.sh
 ENTRYPOINT [ "/samba.sh" ]
 EXPOSE "137/tcp" "137/udp" "139/tcp" "445/tcp" 
+HEALTHCHECK CMD smbclient -L localhost -N
